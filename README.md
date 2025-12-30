@@ -25,7 +25,7 @@ Common commands:
 - 79% accuracy, 79% F1 in predicting if a given driver on a specific circuit with other features will finish on the podium.
 - A random guess has a probability of 50% accuracy, so the model provides 29% more accuracy than a random guess.
 
-## Reproducibility & Further Development
+## Further Development Ideas
 - Split chronologically by race/season to avoid leakage.
 - Use per-circuit embeddings or target encoding for circuit/driver to capture track effects.
 - Get more data from other datasets about circuit-specific characteristics
