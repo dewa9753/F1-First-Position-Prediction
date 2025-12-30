@@ -10,6 +10,10 @@ if __name__ == '__main__':
         show_plots = True
 
     df = pd.read_csv(f'{DATA_ROOT}/final_data.csv')
+    print("All final data columns: ", df.columns.tolist())
+    
+    print("Removing rows with finalPosition > 12 to keep more observations per finalPosition value.")
+    df = df[df['finalPosition'] <= 12]
     
     if show_plots:
         print("Description of numerical features:")
@@ -51,9 +55,6 @@ if __name__ == '__main__':
         print(val_counts)
         sns.barplot(x=val_counts.index, y=val_counts.values)
         plt.show()
-
-    print("Removing rows with finalPosition > 12 to keep more data per category.")
-    df = df[df['finalPosition'] <= 12]
 
     # EDA showed that q3 is the best choice out of the q features, and that all the q features are highly correlated to each other
     # constructorPosition and finalPosition are also correlated enough to be useful
